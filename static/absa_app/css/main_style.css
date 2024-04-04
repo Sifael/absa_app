@@ -2,33 +2,23 @@
 
 /******************** NAVBAR CSS *********************/
 
-.navbar {
-  padding: 8rem;
-  font-size: 16pt;
+/* .navbar {
+  padding: 1rem;
+   font-size: 16pt; 
 
-}
+} */
 
 
-.navbar-brand {
+/* .navbar-brand {
   font-size: 1.6rem !important;
   font-family: 'Quattrocento', serif !important;
 
 }
-
-.navbar-nav li {
-  padding-right: 20px;
-  font-size: 14pt;
-  font-family: 'Marcellus', serif !important;
-
-}
-
-.navbar-light {
-  background-color: black;
-}
+ */
 
 /***************** HOME PAGE CSS ********************/
 
-.text-box-padding {
+/* .text-box-padding {
   padding-top: 100px;
 }
 
@@ -38,18 +28,18 @@
 
 .section-header {
   font-family: 'Marcellus', serif !important;
-}
+} */
 
 
 /***************** ABOUT PAGE CSS ********************/
 
-.about-padding {
+/* .about-padding {
   padding-top: 50px;
-}
+} */
 
 /***************** LEARNING NLP ********************/
 
-.learning-padding {
+/* .learning-padding {
   padding-top: 50px;
 }
 
@@ -60,23 +50,23 @@
 .video-dimensions {
     width: 100%;
     height: 100%;
-}
+} */
 
 
 /***************** CONNECT PAGE CSS ********************/
-.connect-padding {
+/* .connect-padding {
   padding-top: 60px;
-}
+} */
 
 /****************** FOOTER ********************/
-.nav li a {
+/* .nav li a {
     font-size: 14pt;
     color: black;
     padding-top: 50px;
     font-family: 'Marcellus', serif !important;
-}
+} */
 
-.copyrights {
+/* .copyrights {
   font-size: 14pt;
   font-family: 'Marcellus', serif !important;
-}
+} */

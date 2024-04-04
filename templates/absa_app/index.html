@@ -5,55 +5,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Aspect-Based Sentiment Analyzer</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="{% static 'absa_app/css/main_style.css' %}">
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'absa_app/css/main_style.css' %}">
+    
+    <style>
+        /* Custom CSS for padding adjustments */
+        .nav-container {
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+
+        .text-input-padding {
+            padding-top: 2%;
+        }
+
+    </style>
 </head>
 
 <body>
 
-
     <!-- NAVBAR SECTION -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-        <div class="container-fluid container">
-            <a class="navbar-brand" href="{% url 'home' %}">Aspect-Based Sentiment Analyzer</a>
-            <button class="navbar-toggler" type="button" data-toggle='collapse' data-target='#myNavbar' name="button">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid nav-container">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="{% url 'home' %}">
+                Aspect-Based Sentiment Analyzer
+            </a>
+            <!-- Toggler/collapsible Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"> <a class="nav-link" href="#"> Technical Notes </a> </li>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Technical Notes</a>
+                    </li>
                 </ul>
-
             </div>
         </div>
-
     </nav>
 
+    <!-- MAIN CONTENT SECTION -->
+    <div class="container mt-4 text-input-padding">
+        {% block content %}
+        <!-- Your dynamic content goes here -->
+        {% endblock content %}
+    </div>
 
-    
-    {% block content %}
-
-    {% endblock content %}
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-rs1eM8zK8oD2tfkmD92V6XXI0ReVtTgB7ujy6xRlCtMQ8HFe76FBId/lW5i8+nxH"
         crossorigin="anonymous"></script>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
