@@ -11,7 +11,6 @@ def lemmatize_text(text):
     
     # Extract the lemma for each token and join
     lemmatized_output = " ".join([token.lemma_ for token in doc if not token.is_stop])
-    
     return lemmatized_output
 
 

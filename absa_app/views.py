@@ -7,8 +7,13 @@ from absa_app.forms import TextForSentiment
 
 
 # Importing PreProcessors
-from .preprocessors import preprocess
+from .preprocessors import preprocess, load_pickled_file
+import os
 
+count_vectorizer = load_pickled_file('./absa_app/yelp_count_vectorizer.pk')
+tfidf_vectorizer = load_pickled_file('./absa_app/yelp_tfidf_vectorizer.pk')
+
+naive_bayes_model = load_pickled_file('./absa_app/naive_bayes_tfidf.pk')
 
 # Create your views here.
 base = 'absa_app'
@@ -29,7 +34,9 @@ class HomeView(TemplateView):
 
 			args = { 'textform': textform,
 		             'value': ' '.join(['Your Text:' , text]),
-					 'preprocess': ' '.join(['Step 1 Preprocess:', preprocess(text)]) }
+					 'preprocess': ' '.join(['Step 1 Preprocess:', preprocess(text)]),
+					 'count_vectorizer':  ' '.join(['Vectorizer:', str( tfidf_vectorizer.transform([text]).toarray() ) ] ),
+					 'model_prediction':  ' '.join(['Model Prediction:', str(naive_bayes_model.predict(  tfidf_vectorizer.transform([text]).toarray()    )   )] )   }
 
 			return render(request, self.template_name, args)
 
