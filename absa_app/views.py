@@ -5,8 +5,14 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from absa_app.forms import TextForSentiment
 
+
+# Importing PreProcessors
+from .preprocessors import preprocess
+
+
 # Create your views here.
 base = 'absa_app'
+
 
 class HomeView(TemplateView):
 	template_name = f"{base}/home.html"
@@ -22,7 +28,8 @@ class HomeView(TemplateView):
 			textform = TextForSentiment()
 
 			args = { 'textform': textform,
-		             'value': ' '.join(['Your Text:' ,text]) }
+		             'value': ' '.join(['Your Text:' , text]),
+					 'preprocess': ' '.join(['Step 1 Preprocess:', preprocess(text)]) }
 
 			return render(request, self.template_name, args)
 
