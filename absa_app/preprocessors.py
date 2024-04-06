@@ -1,9 +1,12 @@
 import re
 import spacy
 import pickle
+from torchtext.data import get_tokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
+
 nlp = spacy.load('en_core_web_sm')
+torch_tokenizer = get_tokenizer('basic_english')
 
 def lemmatize_text(text):
     # Process the text

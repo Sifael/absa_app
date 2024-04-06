@@ -8,7 +8,6 @@ from absa_app.forms import TextForSentiment
 
 # Importing PreProcessors
 from .preprocessors import preprocess, load_pickled_file
-import os
 
 count_vectorizer = load_pickled_file('./absa_app/yelp_count_vectorizer.pk')
 tfidf_vectorizer = load_pickled_file('./absa_app/yelp_tfidf_vectorizer.pk')
