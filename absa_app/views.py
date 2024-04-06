@@ -36,7 +36,10 @@ class HomeView(TemplateView):
 		             'value': ' '.join(['Your Text:' , text]),
 					 'preprocess': ' '.join(['Step 1 Preprocess:', preprocess(text)]),
 					 'count_vectorizer':  ' '.join(['Vectorizer:', str( tfidf_vectorizer.transform([text]).toarray() ) ] ),
-					 'model_prediction':  ' '.join(['Model Prediction:', str(naive_bayes_model.predict(  tfidf_vectorizer.transform([text]).toarray()    )   )] )   }
+					 'model_prediction':  ' '.join(['Model Rating Prediction:', str(naive_bayes_model.predict(  tfidf_vectorizer.transform([text]).toarray())[0]) ] ),
+					 'model_prediction_probability':  ' '.join(['Model Rating Prediction:', 
+												          str(100 * (naive_bayes_model.predict_proba( tfidf_vectorizer.transform([text]).toarray())))  ] )   }
+
 
 			return render(request, self.template_name, args)
 
