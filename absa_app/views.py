@@ -35,3 +35,8 @@ class HomeView(TemplateView):
 
 		else:
 			return redirect('absa_app:home')
+
+
+
+class TechnicalNotes(TemplateView):
+	template_name = f"{base}/technical-notes.html"
