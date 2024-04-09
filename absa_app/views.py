@@ -34,7 +34,8 @@ class HomeView(TemplateView):
 			args = { 'textform': textform,
 		             'value': ' '.join(['Your Text:' , text]),
 					 'preprocess': ' '.join(['Step 1 Preprocess:', preprocess(text)]),
-					 'count_vectorizer':  ' '.join(['Vectorizer:', str( tfidf_vectorizer.transform([text]).toarray() ) ] ),
+					 'tfidf_vectorizer':  ' '.join(['Step 2: TFIDF Vectorizer:', str( tfidf_vectorizer.transform([text]).toarray() ) ] ),
+					 'feature_size': ' '.join(['Vector Size:', str( tfidf_vectorizer.transform([text]).toarray().size ) ] ),
 					 'model_prediction':  ' '.join(['Model Rating Prediction:', str(naive_bayes_model.predict(  tfidf_vectorizer.transform([text]).toarray())[0]) ] ),
 					 'model_prediction_probability':  ' '.join(['Model Rating Prediction:', 
 												          str(100 * (naive_bayes_model.predict_proba( tfidf_vectorizer.transform([text]).toarray())))  ] )   }
